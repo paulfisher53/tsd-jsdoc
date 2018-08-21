@@ -1,13 +1,13 @@
 {
-  "name": "tsd-jsdoc",
-  "version": "2.0.0-beta.6",
+  "name": "@jumpstartjs/tsd-jsdoc",
+  "version": "2.0.1",
   "description": "Compiles JSDoc annotated javascript into a Typescript Declaration File (.d.ts).",
   "main": "dist/publish.js",
   "author": "Chad Engler <chad@pantherdev.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:englercj/jsdoc2tsd.git"
+    "url": "https://github.com/paulfisher53/tsd-jsdoc"
   },
   "scripts": {
     "clean": "rm -rf *.js *.js.map",
