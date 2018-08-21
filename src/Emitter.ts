@@ -251,7 +251,7 @@ export default class Emitter {
                             propType.type = this._resolveType(pDoc.meta, propType);
                         }
 
-                        propType.jsDocComment = cleanComment(pDoc.meta.comment);
+                        propType.jsDocComment = cleanComment(pDoc.meta.comment || pDoc.meta.description);
                         propType._doclet = doclet;
 
                         return propType;
