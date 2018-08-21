@@ -5,6 +5,7 @@ import { EResolveFailure, warn, warnResolve } from './logger';
 
 const rgxArrayType = /^Array(?:\.<(.*)>)?$/;
 const rgxObjectType = /^Object\.<(\w*),\s*\(?(.*)\)?>$/;
+const rgxMapType = /^Map\.<(\w*),\s*\(?(.*)\)?>$/;
 const rgxJsDocHeader = /^\/\*\*\s?/;
 const rgxJsDocFooter = /\s*\*\/\s?$/;
 const rgxJsDocBody = /^\*\s?/;
@@ -497,6 +498,12 @@ export default class Emitter {
                     return dom.create.array(dom.type.any);
                 }
             }
+        }
+
+        // try map type
+        if (t.startsWith('Map.<')) {
+            t = t.replace('Map.<','Map<');
+            return t as dom.Type;
         }
 
         // try object type
